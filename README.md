@@ -2,18 +2,24 @@
 
 This repository contains scripts and resources to embed three types of watermark with two stages training for vertical federated learning(split leaning), that are global watermark, active watermark and passive watermark.
 
+
+
 ## Requirements
 
 - Python 3.10.\*
 - PyTorch 1.13.\*
+
+
 
 ## File
 
 - `main.py`: workflow of vfl and watermark
 - `config.py`: vfl and watermark parameters
 - `watermark\`: ood-based active watermark sample & optimization-based passive watermark sample, which can all be got during stage1 traing in vfl.
-- `scripts\`: all experiment configs & scripts
-- `data\`: four needed datasets
+- `scripts\`: all experiment configs & scripts, use directly
+- `data\`: **four needed datasets(CIFAR10 ImageNet GTSRB BrainTumor) should be placed here**
+
+
 
 ## Usage
 
@@ -58,11 +64,13 @@ def init_configs(cfg):
     cfg.passive_wm.knn_k = 500
 ```
 
-**Train vfl model & embed watermark**
+**Train VFL Model & Embed Watermark & Verificate Watermark**
 
 ```bash
 python main.py
 ```
+
+
 
 ## Notes
 
